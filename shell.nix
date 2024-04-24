@@ -4,7 +4,7 @@ in
   hPkgs.developPackage {
     root = ./.;
     modifier = drv:
-      pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
+      pkgs.haskell.lib.addBuildTools drv (with hPkgs;
         [ cabal-install
           ghcid
           haskell-language-server
