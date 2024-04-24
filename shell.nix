@@ -1,7 +1,7 @@
 let
-  inherit (import nix/nixpkgs.nix) pkgs compiler;
+  inherit (import nix/nixpkgs.nix) pkgs hPkgs;
 in
-  compiler.developPackage {
+  hPkgs.developPackage {
     root = ./.;
     modifier = drv:
       pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;

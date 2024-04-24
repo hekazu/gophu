@@ -4,5 +4,5 @@ rec {
     sha256 = "sha256:0rmbq6jr21fvcspxshaiwmm5a1z66pykjm2f5imww9nhxn6dfgzv";
   }) {};
   compilerVersion = "ghc98";
-  compiler = pkgs.haskell.packages."${compilerVersion}";
+  hPkgs = pkgs.haskell.packages."${compilerVersion}";
 }

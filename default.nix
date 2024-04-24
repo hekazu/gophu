@@ -1,4 +1,4 @@
 let
-  inherit (import nix/nixpkgs.nix) pkgs compiler;
+  inherit (import nix/nixpkgs.nix) pkgs hPkgs;
 in
-  compiler.callCabal2nix "gophu" ./. {}
+  hPkgs.callCabal2nix "gophu" ./. {}
