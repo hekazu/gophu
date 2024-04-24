@@ -11,4 +11,4 @@ interactivity has been planned as of now.
 To test the limit of my abilities (and learn to Nix Haskell properly)
 
 ## How
-Not in any way yet. The executable is not ready.
+`nix-build` and you have something. Not a functioning client, but something.

@@ -69,8 +69,6 @@ executable gophu
 
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.19.0.0
-                    , bytestring
-                    , network-simple ^>=0.4.5
 
     -- Directories containing source files.
     hs-source-dirs:   app
