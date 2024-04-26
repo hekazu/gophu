@@ -11,4 +11,6 @@ interactivity has been planned as of now.
 To test the limit of my abilities (and learn to Nix Haskell properly)
 
 ## How
-`nix-build` and you have something. Not a functioning client, but something.
+1. `nix-build` the executable
+2. The executable takes one argument, which is the URL for the Gopher resource
+to access, e.g. `gophu example.org`.

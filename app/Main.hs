@@ -2,8 +2,9 @@ module Main where
 
 import System.Environment (getArgs)
 import Gophu.Interface
+import Gophu.Network (performGopherQuery)
 
 main :: IO ()
 main = do
   args <- getArgs
-  mapM_ print $ handleArgs args
+  either putStrLn (uncurry performGopherQuery) $ handleArgs args

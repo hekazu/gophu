@@ -1,4 +1,4 @@
-module Gophu.Network (performGopherQuery) where
+module Gophu.Network (ResourceName, performGopherQuery) where
 
 import qualified Data.ByteString as BS
 import Data.ByteString.Char8 as BSC
