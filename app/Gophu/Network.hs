@@ -4,9 +4,11 @@ import qualified Data.ByteString as BS
 import Data.ByteString.Char8 as BSC
 import Network.Simple.TCP (HostName, connect, recv, send)
 
-performGopherQuery :: HostName -> IO ()
-performGopherQuery hn = connect hn "gopher" $ \(s, _) -> do
-  send s crlf
+type ResourceName = String
+
+performGopherQuery :: HostName -> ResourceName -> IO ()
+performGopherQuery hn rn = connect hn "gopher" $ \(s, _) -> do
+  send s $ BSC.pack rn <> crlf
   repeatUntilNothing (recv s 1024) BS.putStr
 
 repeatUntilNothing :: IO (Maybe bs) -> (bs -> IO ()) -> IO ()
