@@ -1,7 +1,10 @@
-module Gophu.Interface (handleArgs) where
+module Gophu.Interface (runGophuWithArgs) where
 
-import Gophu.Network (ResourceName)
+import Gophu.Network
 import Network.Simple.TCP (HostName)
+
+runGophuWithArgs :: [String] -> IO ()
+runGophuWithArgs = either putStrLn (uncurry performGopherQuery) . handleArgs
 
 -- It's not pretty, but it works. Don't nerdsnipe yourself, not yet.
 -- There will always be time for refactoring later.

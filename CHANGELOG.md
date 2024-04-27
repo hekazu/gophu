@@ -1,5 +1,9 @@
 # Revision history for gophu
 
+## 0.1.0.1 -- 2024-04-27
+
+* Refactoring to reduce the number of imports from within the project
+
 ## 0.1.0.0 -- 2024-04-26
 
 * First working prototype.
