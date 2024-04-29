@@ -1,13 +1,14 @@
-module Gophu.Network (ResourceName, performGopherQuery) where
+module Gophu.Network (QueryInfo(..), performGopherQuery) where
 
 import qualified Data.ByteString as BS
 import Data.ByteString.Char8 as BSC
 import Network.Simple.TCP (HostName, connect, recv, send)
 
+data QueryInfo = QueryInfo HostName ResourceName
 type ResourceName = String
 
-performGopherQuery :: HostName -> ResourceName -> IO ()
-performGopherQuery hn rn = connect hn "gopher" $ \(s, _) -> do
+performGopherQuery :: QueryInfo -> IO ()
+performGopherQuery (QueryInfo hn rn) = connect hn "gopher" $ \(s, _) -> do
   send s $ BSC.pack rn <> crlf
   repeatUntilNothing (recv s 1024) BS.putStr
 
